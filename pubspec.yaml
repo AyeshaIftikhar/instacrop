@@ -1,6 +1,6 @@
 name: instacrop
 description: A flutter plugin to crop image in instapicker package. Fork of insta_image_crop package.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/AyeshaIftikhar/instacrop.git
 repository: https://github.com/AyeshaIftikhar/instacrop
 topics:

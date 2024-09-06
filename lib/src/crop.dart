@@ -1,8 +1,4 @@
-import 'dart:math';
-
-import 'package:flutter/material.dart';
-
-import 'crop_transform.dart';
+part of '../instacrop.dart';
 
 const _kCropGridColumnCount = 3;
 const _kCropGridRowCount = 3;

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of '../instacrop.dart';
 
 class CropTransform extends StatelessWidget {
   const CropTransform({
