@@ -1,4 +1,4 @@
-part of instacrop;
+part of '../instacrop.dart';
 
 class ImageOptions {
   final int width;

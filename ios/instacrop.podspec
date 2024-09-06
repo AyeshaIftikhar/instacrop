@@ -5,13 +5,13 @@
 Pod::Spec.new do |s|
   s.name             = 'instacrop'
   s.version          = '0.0.1'
-  s.summary          = 'A new Flutter plugin project.'
+  s.summary          = 'A flutter plugin to crop image in instapicker package. Fork of insta_image_crop package.'
   s.description      = <<-DESC
-A new Flutter plugin project.
-                       DESC
-  s.homepage         = 'http://example.com'
+A flutter plugin to crop image in instapicker package. Fork of insta_image_crop package.
+                      DESC
+  s.homepage         = 'http://aishayy.com'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
+  s.author           = { 'Your Company' => 'seayeshaiftikhar@gmail.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'

@@ -1,11 +1,17 @@
 name: instacrop
-description: "A new Flutter plugin project."
+description: A flutter plugin to crop image in instapicker package. Fork of insta_image_crop package.
 version: 0.0.1
-homepage: 
+homepage: https://github.com/AyeshaIftikhar/instacrop.git
+repository: https://github.com/AyeshaIftikhar/instacrop
+topics:
+  - instagram
+  - crop
+  - edit
+  - picker
 
 environment:
   sdk: ^3.5.1
-  flutter: '>=3.3.0'
+  flutter: ">=3.3.0"
 
 dependencies:
   flutter:
@@ -70,3 +76,6 @@ flutter:
   #
   # For details regarding fonts in packages, see
   # https://flutter.dev/to/font-from-package
+
+funding: 
+  - https://patreon.com/AyeshaIftikhar
