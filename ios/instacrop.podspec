@@ -4,19 +4,19 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'instacrop'
-  s.version          = '0.0.1'
+  s.version          = '1.0.0+3'
   s.summary          = 'A flutter plugin to crop image in instapicker package. Fork of insta_image_crop package.'
   s.description      = <<-DESC
 A flutter plugin to crop image in instapicker package. Fork of insta_image_crop package.
                       DESC
   s.homepage         = 'http://aishayy.com'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'seayeshaiftikhar@gmail.com' }
+  s.author           = { 'aishayy' => 'contactus@aishayy.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.platform = :ios, '12.0'
+  s.platform = :ios, '14.0'
 
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
