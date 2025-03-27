@@ -21,8 +21,7 @@ class ImageOptions {
 }
 
 class InstaCrop {
-  static const _channel =
-      MethodChannel('plugins.aishayy.com/instacrop');
+  static const _channel = MethodChannel('plugins.aishayy.com/instacrop');
 
   static Future<bool> requestPermissions() => _channel
       .invokeMethod('requestPermissions')

@@ -1,7 +1,5 @@
 package com.aishayy.instacrop;
 
-package dev.legoffmael.imagecrop;
-
 import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;

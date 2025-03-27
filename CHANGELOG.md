@@ -1,3 +1,6 @@
+## 1.0.0+4
+* Fixed android build issue
+
 ## 1.0.0+3
 * Fixes `MissingPluginException(No implementation found for method sampleImage on channel plugins.legoffmael.dev/insta_assets_crop)` on flutter 3.24
 
