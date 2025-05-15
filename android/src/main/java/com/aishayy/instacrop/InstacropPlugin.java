@@ -25,6 +25,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.exifinterface.media.ExifInterface;
 
 import io.flutter.plugin.common.BinaryMessenger;
@@ -33,13 +35,14 @@ import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
+// import io.flutter.plugin.common.PluginRegistry.Registrar;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
 
 public final class InstacropPlugin implements FlutterPlugin , ActivityAware, MethodCallHandler, PluginRegistry.RequestPermissionsResultListener {
     private static final int PERMISSION_REQUEST_CODE = 13094;
@@ -60,21 +63,25 @@ public final class InstacropPlugin implements FlutterPlugin , ActivityAware, Met
     /**
      * legacy APIs
      */
-    public static void registerWith(Registrar registrar) {
-        InstacropPlugin instance = new InstacropPlugin(registrar.activity());
-        instance.setup(registrar.messenger());
-        registrar.addRequestPermissionsResultListener(instance);
-    }
+    // public static void registerWith(Registrar registrar) {
+    //     InstacropPlugin instance = new InstacropPlugin(registrar.activity());
+    //     instance.setup(registrar.messenger());
+    //     registrar.addRequestPermissionsResultListener(instance);
+    // }
 
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
-      this.setup(binding.getBinaryMessenger());
+    //   this.setup(binding.getBinaryMessenger());
+        channel = new MethodChannel(binding.getBinaryMessenger(), "plugins.aishayy.com/instacrop"); 
+        channel.setMethodCallHandler(this);
     }
   
     @Override
     public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
-        channel.setMethodCallHandler(null);
-        channel = null;
+        if (channel != null) {
+            channel.setMethodCallHandler(null);
+            channel = null;
+        }
     }
 
     @Override
@@ -86,10 +93,11 @@ public final class InstacropPlugin implements FlutterPlugin , ActivityAware, Met
    
     @Override
     public void onDetachedFromActivity() {
-        activity = null;
         if(binding != null){
             binding.removeRequestPermissionsResultListener(this);
-        }
+        }  
+        activity = null;
+        binding = null;
     }
 
     @Override
@@ -102,10 +110,10 @@ public final class InstacropPlugin implements FlutterPlugin , ActivityAware, Met
         this.onDetachedFromActivity();
     }
   
-    private void setup(BinaryMessenger messenger) {
-        channel = new MethodChannel(messenger, "plugins.aishayy.com/instacrop"); //plugins.legoffmael.dev/insta_assets_crop
-        channel.setMethodCallHandler(this);
-    }
+    // private void setup(BinaryMessenger messenger) {
+    //     channel = new MethodChannel(messenger, "plugins.aishayy.com/instacrop"); 
+    //     channel.setMethodCallHandler(this);
+    // }
 
 
     @SuppressWarnings("ConstantConditions")
@@ -203,15 +211,7 @@ public final class InstacropPlugin implements FlutterPlugin , ActivityAware, Met
                 canvas.drawBitmap(srcBitmap, srcRect, dstRect, paint);
 
                 // TODO: Research a way to optimize rendering via matrix to reduce memory print.
-//                Matrix transformations = new Matrix();
-//                transformations.mapRect(new RectF(0, 0,
-//                                                  options.getWidth(), options.getHeight()));
-//                transformations.postTranslate(-options.getWidth() / 2f * area.left,
-//                                              -options.getHeight() / 2f * area.top);
-//                transformations.postRotate(options.getDegrees(),
-//                                           options.getWidth() / 2f * area.width(),
-//                                           options.getHeight() / 2f * area.height());
-//                canvas.drawBitmap(srcBitmap, transformations, paint);
+
 
                 try {
                     final File dstFile = createTemporaryImageFile();

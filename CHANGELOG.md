@@ -1,3 +1,6 @@
+## 1.0.1
+* upgraded the Flutter v2 Embedding
+
 ## 1.0.0+4
 * Fixed android build issue
 
