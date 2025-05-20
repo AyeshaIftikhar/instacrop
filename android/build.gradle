@@ -41,6 +41,12 @@ android {
         jvmTarget = JavaVersion.VERSION_17
     }
 
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
     sourceSets {
         main.java.srcDirs += "src/main/kotlin"
         test.java.srcDirs += "src/test/kotlin"
